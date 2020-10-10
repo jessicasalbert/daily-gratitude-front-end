@@ -36,10 +36,12 @@ function renderPost(post) {
     const postsDiv = document.querySelector("#posts");
     const postEl = document.createElement("div.card");
     postEl.innerHTML = `
-        <h5 class="card-header">${post.user}</h5>
+        <div class="card-header">
+            ${post.user}
+        </div>
         <div class="card-body">
             <p class="card-text">${post.content}</p>
-            <button class="btn btn-sm">Go somewhere</button>
+            <button class="btn btn-dark btn-sm">Go somewhere</button>
         </div>
     `
     postsDiv.append(postEl)
