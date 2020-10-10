@@ -1,3 +1,7 @@
+//json-server --watch db.json
+
+//const { config } = require("chai")
+
 
 const post = {
     "user": "Slabs",
@@ -7,8 +11,8 @@ const post = {
   }
 document.addEventListener("DOMContentLoaded", () => {
     toggleForm()
-    //renderPost(post)
     getPosts()
+    submitHandler()
 })
 
 
@@ -55,4 +59,31 @@ function renderPost(post) {
         </div>
     `
     postsDiv.append(postEl)
+}
+
+function submitHandler() {
+    document.querySelector("#form").addEventListener("submit", e => {
+        e.preventDefault()
+        const form = e.target
+        const post =  {
+            user: form.user.value,
+            content: form.content.value
+        }
+        addPost(post)
+    })
+}
+
+function addPost(post) {
+    const configObj = {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+          },
+        body: JSON.stringify(post)
+    }
+    fetch("http://localhost:3000/posts", configObj)
+    .then( res => res.json() )
+    .then(post => renderPost(post))
+    .catch( error => console.log(error.message ))
 }

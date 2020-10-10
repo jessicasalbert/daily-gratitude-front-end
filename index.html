@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Thankful</title>
 </head>
 <body>
     <div class="container">
         <h1>Thankful</h1>
         <button class="btn btn-dark" id="show-form">Add a post</button><br><br>
         <div hidden id="new-post-form">
-            <form action="http://localhost:3000/posts" method="POST">
+            <form id="form" action="http://localhost:3000/posts" method="POST">
                 <label> Display name: <input type="text" name="user" id="user"/></label><br>
                 <textarea name="content" id="content" rows="4" cols="50"></textarea><br>
                 <!-- <input type="hidden" id="date" name="date" value="3487"> -->
