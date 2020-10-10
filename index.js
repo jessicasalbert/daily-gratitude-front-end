@@ -7,7 +7,8 @@ const post = {
   }
 document.addEventListener("DOMContentLoaded", () => {
     toggleForm()
-    renderPost(post)
+    //renderPost(post)
+    getPosts()
 })
 
 
@@ -27,8 +28,17 @@ function toggleForm() {
     })
 }
 
-function renderPosts(data) {
+function renderPosts(posts) {
+    posts.map( post => renderPost(post))
+}
 
+function getPosts() {
+    const postsObj = fetch("http://localhost:3000/posts")
+    .then( resp => resp.json() )
+    .then( users => renderPosts(users))
+    .catch( error => {
+        console.log(error.message)
+    })
 }
 
 
@@ -41,7 +51,7 @@ function renderPost(post) {
         </div>
         <div class="card-body">
             <p class="card-text">${post.content}</p>
-            <button class="btn btn-dark btn-sm">Go somewhere</button>
+            <button class="btn btn-dark btn-sm">Likes</button>
         </div>
     `
     postsDiv.append(postEl)

@@ -13,11 +13,13 @@
         <div hidden id="new-post-form">
             <form action="http://localhost:3000/posts" method="POST">
                 <label> Display name: <input type="text" name="user" id="user"/></label><br>
-                <textarea name="content" id="content" rows="4" cols="50"></textarea>
+                <textarea name="content" id="content" rows="4" cols="50"></textarea><br>
                 <!-- <input type="hidden" id="date" name="date" value="3487"> -->
-
+                <input type="submit" name="submit" id="submit" value="Submit" />
             </form>
         </div>
+        <hr>
+        <h2>Posts</h2>
         <div id="posts" class="row"></div>
     </div>
     <script src="index.js"></script>
