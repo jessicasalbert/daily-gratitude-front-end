@@ -55,7 +55,8 @@ function renderPost(post) {
         </div>
         <div class="card-body">
             <p class="card-text">${post.content}</p>
-            <button class="btn btn-dark btn-sm">Likes</button>
+            <h5 class="card-title">${post.likes} likes</h5>
+            <button class="btn btn-dark btn-sm">Like</button>
         </div>
     `
     postsDiv.append(postEl)
@@ -67,7 +68,8 @@ function submitHandler() {
         const form = e.target
         const post =  {
             user: form.user.value,
-            content: form.content.value
+            content: form.content.value,
+            likes: 0
         }
         addPost(post)
     })
