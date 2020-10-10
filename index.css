@@ -2,3 +2,11 @@
     width: 100%,
     display: block
 }
+
+.container {
+    justify-content: center;
+}
+
+*, h1 {
+    margin: 20px;
+}

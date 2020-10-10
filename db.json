@@ -1,22 +1,28 @@
 {
   "posts": [
     {
-      "user": "Slabby Slabs",
-      "content": "Thankful for a long weekend and fall fun with Mis",
-      "date": "October 2",
-      "likes": 34,
+      "user": "Jess",
+      "content": "I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!",
+      "likes": 5,
       "id": 1
     },
     {
-      "user": "Rous",
-      "content": "I am so thankful to have such a sweet rous. I would never be mad at her for working late in bed because I know she is working hard to land a Fidelity job",
-      "id": 4
+      "user": "Jess",
+      "content": "I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!",
+      "likes": 3,
+      "id": 2
+    },
+    {
+      "user": "J",
+      "content": "I am the best!",
+      "likes": 4,
+      "id": 3
     },
     {
       "user": "Jess",
-      "content": "I love JS!",
-      "likes": 0,
-      "id": 5
+      "content": "Hello",
+      "likes": 8,
+      "id": 4
     }
   ]
 }

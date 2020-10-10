@@ -2,17 +2,11 @@
 
 //const { config } = require("chai")
 
-
-const post = {
-    "user": "Slabs",
-    "content": "Grateful 4 u",
-    "date": "August 23",
-    "likes": 0
-  }
 document.addEventListener("DOMContentLoaded", () => {
     toggleForm()
     getPosts()
     submitHandler()
+    likeHandler()
 })
 
 
@@ -53,11 +47,12 @@ function renderPost(post) {
         <div class="card-header">
             ${post.user}
         </div>
-        <div class="card-body">
+        <div class="card-body" data-id=${post.id}>
             <p class="card-text">${post.content}</p>
             <h5 class="card-title">${post.likes} likes</h5>
-            <button class="btn btn-dark btn-sm">Like</button>
+            <button class="likes btn btn-dark btn-sm">Like</button>
         </div>
+        <br>
     `
     postsDiv.append(postEl)
 }
@@ -72,6 +67,7 @@ function submitHandler() {
             likes: 0
         }
         addPost(post)
+        form.reset()
     })
 }
 
@@ -89,3 +85,31 @@ function addPost(post) {
     .then(post => renderPost(post))
     .catch(error => console.log(error.message))
 }
+
+function likeHandler() {
+    document.querySelector("#posts").addEventListener("click", e => {
+        if (e.target.matches(".likes")) {
+            const likeEl = e.target.previousElementSibling
+            const postId = e.target.parentElement.dataset.id
+            const updatedLikes = parseInt(likeEl.textContent) + 1
+
+            const configObj = {
+                method: "PATCH",
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                },
+                body: JSON.stringify({
+                    likes: updatedLikes
+                })
+            }
+            fetch("http://localhost:3000/posts/" + postId, configObj)
+            .then( res => res.json() )
+            .then( obj => {
+                likeEl.textContent = obj.likes + " likes"})
+            .catch( error => console.log(error.message))
+        }
+    })
+}
+
+

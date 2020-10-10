@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Thankful</h1>
+        <h1>Daily Gratitude</h1><br>
         <button class="btn btn-dark" id="show-form">Add a post</button><br><br>
         <div hidden id="new-post-form">
             <form id="form" action="http://localhost:3000/posts" method="POST">
@@ -20,7 +20,8 @@
         </div>
         <hr>
         <h2>Posts</h2>
-        <div id="posts" class="row"></div>
+        <table id="posts">
+        </table>
     </div>
     <script src="index.js"></script>
 </body>
