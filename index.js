@@ -85,5 +85,5 @@ function addPost(post) {
     fetch("http://localhost:3000/posts", configObj)
     .then( res => res.json() )
     .then(post => renderPost(post))
-    .catch( error => console.log(error.message ))
+    .catch(error => console.log(error.message))
 }

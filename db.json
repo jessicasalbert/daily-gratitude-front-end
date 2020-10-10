@@ -1,11 +1,16 @@
 {
-    "posts": [
-      {
-        "user": "Slabby Slabs",
-        "content": "Thankful for a long weekend and fall fun with Mis",
-        "date": "October 2",
-        "likes": 34
-      }
-      
-    ]
-  }
+  "posts": [
+    {
+      "user": "Slabby Slabs",
+      "content": "Thankful for a long weekend and fall fun with Mis",
+      "date": "October 2",
+      "likes": 34,
+      "id": 1
+    },
+    {
+      "user": "Rous",
+      "content": "I am so thankful to have such a sweet rous. I would never be mad at her for working late in bed because I know she is working hard to land a Fidelity job",
+      "id": 4
+    }
+  ]
+}
