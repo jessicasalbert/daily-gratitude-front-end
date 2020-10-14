@@ -3,14 +3,8 @@
     {
       "user": "Jess",
       "content": "I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!",
-      "likes": 5,
+      "likes": 29,
       "id": 1
-    },
-    {
-      "user": "Jess",
-      "content": "I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!",
-      "likes": 3,
-      "id": 2
     },
     {
       "user": "J",
@@ -23,6 +17,12 @@
       "content": "Hello",
       "likes": 8,
       "id": 4
+    },
+    {
+      "user": "hi",
+      "content": "I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!I am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!\n\nvI am so thankful for a long weekend to see some friends & also practice JS because it's soo fun!\n\n",
+      "likes": 0,
+      "id": 5
     }
   ]
 }

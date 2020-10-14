@@ -2,6 +2,9 @@
 
 //const { config } = require("chai")
 
+
+const BASE_URL = "http://localhost:3000/api/v1/posts/"
+
 document.addEventListener("DOMContentLoaded", () => {
     toggleForm()
     getPosts()
@@ -31,7 +34,7 @@ function renderPosts(posts) {
 }
 
 function getPosts() {
-    const postsObj = fetch("http://localhost:3000/posts")
+    const postsObj = fetch(BASE_URL)
     .then( resp => resp.json() )
     .then( users => renderPosts(users))
     .catch( error => {
@@ -49,7 +52,7 @@ function renderPost(post) {
         </div>
         <div class="card-body" data-id=${post.id}>
             <p class="card-text">${post.content}</p>
-            <h5 class="card-title">${post.likes} likes</h5>
+            <h5 class="card-title"> likes</h5>
             <button class="likes btn btn-dark btn-sm">Like</button>
         </div>
         <br>
@@ -61,12 +64,12 @@ function submitHandler() {
     document.querySelector("#form").addEventListener("submit", e => {
         e.preventDefault()
         const form = e.target
-        const post =  {
+        const newPost =  {
             user: form.user.value,
             content: form.content.value,
-            likes: 0
+            //likes: 0
         }
-        addPost(post)
+        addPost(newPost)
         form.reset()
     })
 }
@@ -80,7 +83,7 @@ function addPost(post) {
           },
         body: JSON.stringify(post)
     }
-    fetch("http://localhost:3000/posts", configObj)
+    fetch(BASE_URL, configObj)
     .then( res => res.json() )
     .then(post => renderPost(post))
     .catch(error => console.log(error.message))
@@ -103,7 +106,7 @@ function likeHandler() {
                     likes: updatedLikes
                 })
             }
-            fetch("http://localhost:3000/posts/" + postId, configObj)
+            fetch(BASE_URL + postId, configObj)
             .then( res => res.json() )
             .then( obj => {
                 likeEl.textContent = obj.likes + " likes"})
